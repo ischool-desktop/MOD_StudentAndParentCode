@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet type="text/xsl" href="format.xsl" ?>
+<ValidateRule>
+  <DuplicateDetection>
+    <Detector Name="PrimaryKey1">
+      <Field Name="學號"/>
+    </Detector>
+    <!-- 暫不提供匯入Key - 身分證號
+		<Detector Name="PrimaryKey2">
+			<Field Name="身分證號"/>
+			<Field Name="封存分類"/>
+		</Detector>
+    -->
+  </DuplicateDetection>
+  <FieldList>
+    <!-- 重要的鍵值內容-->
+    <Field Required="True" Name="學號" Description="此為學生必要鍵值(學號不可重覆)">
+      <Validate AutoCorrect="False" Description="「學號」不允許空白。" ErrorType="Error" Validator="不可空白" When=""/>
+      <Validate AutoCorrect="False" Description="「學號」長度必須小於12個文字。" ErrorType="Error" Validator="文字12" When=""/>
+      <Validate AutoCorrect="False" Description="「學號」不存在於系統中。" ErrorType="Error" Validator="學號是否存在系統" When=""/>
+      <Validate AutoCorrect="False" Description="「學號」於系統內有多名學生。" ErrorType="Error" Validator="學號是否重覆" When=""/>
+      <Validate AutoCorrect="False" Description="「學號」建議使用英文數字組合(不包含空白)。" ErrorType="Warning" Validator="多個英數字元" When=""/>
+    </Field>
+    
+    <Field Required="False" Name="學生代碼" EmptyAlsoValidate="false" Description="學生的個人認證代碼">
+      <Validate AutoCorrect="False" Description="「學生代碼」不可於系統內重覆。" ErrorType="Error" Validator="學生代碼不可重覆" When=""/>
+      <Validate AutoCorrect="False" Description="「學生代碼」不可於Excel內重覆。" ErrorType="Error" Validator="資料是否重覆過1" When=""/>
+      <!--
+      <Validate AutoCorrect="False" Description="「學生代碼」建議是英文與數字組合。" ErrorType="Warning" Validator="建議是英文數字組合" When=""/>
+      <Validate AutoCorrect="False" Description="「學生代碼」建議6碼以上。" ErrorType="Warning" Validator="建議是6碼" When=""/>
+      -->
+    </Field>
+    
+    <Field Required="False" Name="家長代碼" EmptyAlsoValidate="false" Description="學生的家長認證代碼">
+      <Validate AutoCorrect="False" Description="「家長代碼」不可於系統內重覆。" ErrorType="Error" Validator="家長代碼不可重覆" When=""/>
+      <Validate AutoCorrect="False" Description="「家長代碼」不可於Excel內重覆。" ErrorType="Error" Validator="資料是否重覆過2" When=""/>
+      <!--
+      <Validate AutoCorrect="False" Description="「家長代碼」建議是英文與數字組合。" ErrorType="Warning" Validator="建議是英文數字組合" When=""/>
+      <Validate AutoCorrect="False" Description="「家長代碼」建議6碼以上。" ErrorType="Warning" Validator="建議是6碼" When=""/>
+       -->
+    </Field>
+    
+  </FieldList>
+  <ValidatorList>
+    <FieldValidator Name="學號是否存在系統" Type="STUDENTNUMBEREXISTENCE"/>
+    <FieldValidator Name="學號是否重覆" Type="STUDENTNUMBERREPEAT"/>
+    <FieldValidator Name="學生代碼不可重覆" Type="STUDENTNUMBERNOTCHECK"/>
+    <FieldValidator Name="家長代碼不可重覆" Type="PARENTNUMBERNOTCHECK"/>
+    <FieldValidator Name="建議是英文數字組合" Type="NUMBERISSIX1"/>
+    <FieldValidator Name="建議是6碼" Type="NUMBERISSIX2"/>
+    <FieldValidator Name="資料是否重覆過1" Type="DATAREPEATCHECK1"/>
+    <FieldValidator Name="資料是否重覆過2" Type="DATAREPEATCHECK2"/>
+    <FieldValidator Name="文字12" Type="STRINGLENGTH">
+      <MinLength>0</MinLength>
+      <MaxLength>12</MaxLength>
+    </FieldValidator>
+    <FieldValidator Name="不可空白" Type="STRINGLENGTH">
+      <MinLength>1</MinLength>
+    </FieldValidator>
+    <FieldValidator Name="多個英數字元" Type="Regex">
+      <ValidPattern>
+        <![CDATA[^[A-Za-z0-9]+$]]>
+        <!-- 正規表示法 -->
+      </ValidPattern>
+    </FieldValidator>
+    <!--動態添加XML驗證規則,標記區-->
+  </ValidatorList>
+
+  <RowValidate>
+    
+    
+    
+    
+  </RowValidate>
+  <ConditionList/>
+</ValidateRule>
