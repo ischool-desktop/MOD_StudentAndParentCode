@@ -20,13 +20,13 @@ namespace K12Code.Management.Module
 
         public override void InitializeExport(SmartSchool.API.PlugIn.Export.ExportWizard wizard)
         {
-            wizard.ExportableFields.AddRange("性別", "戶籍電話", "聯絡電話", "戶籍地址", "聯絡地址", "學生代碼", "家長代碼");
+            wizard.ExportableFields.AddRange("性別", "戶籍電話", "聯絡電話", "戶籍地址", "聯絡地址", "學生代碼", "家長代碼","登入帳號");
 
             wizard.ExportPackage += delegate(object sender, SmartSchool.API.PlugIn.Export.ExportPackageEventArgs e)
             {
                 StringBuilder sb = new StringBuilder();
-                sb.Append("select student.id,student.seat_no,student.permanent_phone,student.contact_phone,student.gender,student.name,student.student_code,student.parent_code,class.grade_year,class.class_name,class.display_order ");
-                sb.Append("from student left join class on student.ref_class_id=class.id where student.id in ");
+                sb.Append("select student.id,student.seat_no,student.permanent_phone,student.contact_phone,student.gender,student.name,student.student_code,student.parent_code,class.grade_year,class.class_name,class.display_order,student_parent.account ");
+                sb.Append("from student left join class on student.ref_class_id=class.id left join student_parent on student.id=student_parent.ref_student_id where student.id in ");
                 sb.Append("('" + string.Join("','", e.List) + "') ");
                 sb.Append("order by grade_year,display_order,class_name,seat_no,name");
                 //地址
@@ -77,6 +77,7 @@ namespace K12Code.Management.Module
                                 case "聯絡地址": row.Add(field, MailingAddress); break;
                                 case "學生代碼": row.Add(field, "" + dRow["student_code"]); break;
                                 case "家長代碼": row.Add(field, "" + dRow["parent_code"]); break;
+                                case "登入帳號": row.Add(field, "" + dRow["account"]); break;
                             }
                         }
                     }
