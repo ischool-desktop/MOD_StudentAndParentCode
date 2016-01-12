@@ -269,7 +269,14 @@ namespace K12Code.Management.Module
             //取得設定檔
             Campus.Report.ReportConfiguration ConfigurationInCadre = new Campus.Report.ReportConfiguration(StudentParentCode_Config);
             //畫面內容(範本內容,預設樣式
-            Campus.Report.TemplateSettingForm TemplateForm = new Campus.Report.TemplateSettingForm(ConfigurationInCadre.Template, new Campus.Report.ReportTemplate(Properties.Resources.班級學生家長代碼表_範例, Campus.Report.TemplateType.Word));
+
+            Campus.Report.ReportTemplate tempRpt = new Campus.Report.ReportTemplate(Properties.Resources.班級學生家長代碼表_範例, Campus.Report.TemplateType.Word);
+
+            // 假設完全沒有
+            if (ConfigurationInCadre.Template == null)
+                ConfigurationInCadre.Template = tempRpt;
+
+            Campus.Report.TemplateSettingForm TemplateForm = new Campus.Report.TemplateSettingForm(ConfigurationInCadre.Template, tempRpt);
             //預設名稱
             TemplateForm.DefaultFileName = "班級學生家長代碼表(樣版)";
             //如果回傳為OK
