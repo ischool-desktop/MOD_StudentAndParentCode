@@ -152,6 +152,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form\CompleteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\CompleteForm.designer.cs">
+      <DependentUpon>CompleteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\DataGridViewExport.cs" />
+    <Compile Include="Form\ParentSeachForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\ParentSeachForm.designer.cs">
+      <DependentUpon>ParentSeachForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Stud.cs" />
+    <Compile Include="Form\tool.cs" />
     <Compile Include="ImportExport\ExportStudentAndParent.cs" />
     <Compile Include="ImportExport\ExportStudentV2.cs">
       <SubType>Form</SubType>
@@ -232,6 +247,12 @@
     <None Include="Resources\班級學生家長代碼表_範例.doc" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Form\CompleteForm.resx">
+      <DependentUpon>CompleteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\ParentSeachForm.resx">
+      <DependentUpon>ParentSeachForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ImportExport\ExportStudentV2.resx">
       <DependentUpon>ExportStudentV2.cs</DependentUpon>
     </EmbeddedResource>
@@ -321,6 +342,7 @@
     <Content Include="Library\SmartSchool.ErrorReporting.dll" />
     <Content Include="Library\SmartSchool.ErrorReporting.pdb" />
     <Content Include="Library\SmartSchool.ErrorReporting.xml" />
+    <None Include="Resources\agronomy_64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

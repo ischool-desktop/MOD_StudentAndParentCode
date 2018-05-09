@@ -149,5 +149,16 @@ namespace K12Code.Management.Module
                 return FISCA.Permission.UserAcl.Current[教師代碼].Executable;
             }
         }
+
+        //權限代碼
+        public static string 家長帳號查詢 { get { return "K12Code.Management.Module.Form.ParentSeachForm.cs"; } }
+
+        public static bool 家長帳號查詢權限
+        {
+            get
+            {
+                return FISCA.Permission.UserAcl.Current[家長帳號查詢].Executable;
+            }
+        }
     }
 }

@@ -241,8 +241,23 @@ namespace K12Code.Management.Module
             {
                 ParentInvitations insert = new ParentInvitations();
                 insert.ShowDialog();
-            }; 
+            };
             #endregion
+
+            #region 行動應用查詢
+
+            MenuButton sMenuButton = MotherForm.StartMenu["行動應用"];
+            sMenuButton.Image = Properties.Resources.agronomy_64;
+            sMenuButton["家長帳號查詢"].Enable = Permissions.家長帳號查詢權限;
+            sMenuButton["家長帳號查詢"].Click += delegate
+            {
+                ParentSeachForm a = new ParentSeachForm();
+                a.ShowDialog();
+            };
+
+
+            #endregion
+
 
             #region 權限代碼
 
@@ -271,6 +286,9 @@ namespace K12Code.Management.Module
 
             detail = RoleAclSource.Instance["教師"]["資料項目"];
             detail.Add(new DetailItemFeature(Permissions.教師代碼, "教師代碼"));
+
+            detail = RoleAclSource.Instance["系統"]["行動應用"];
+            detail.Add(new ReportFeature(Permissions.家長帳號查詢, "家長帳號查詢"));
 
             #endregion
         }
