@@ -6,12 +6,12 @@ using K12.Data;
 
 namespace K12Code.Management.Module
 {
-    class FromData
+    public class FromData
     {
         /// <summary>
         /// 學生
         /// </summary>
-        StudentRecord sr { get; set; }
+        public StudentRecord sr { get; set; }
 
         /// <summary>
         /// 學生登入帳號

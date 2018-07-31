@@ -32,6 +32,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnExit = new DevComponents.DotNetBar.ButtonX();
             this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.加入學生待處理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.刪除家長帳號ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.btnSelect = new DevComponents.DotNetBar.ButtonX();
+            this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.helpCount = new DevComponents.DotNetBar.LabelX();
+            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.colClassName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSentNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStudentNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,15 +54,6 @@
             this.colCustodianName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFatherName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMotherName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.加入學生待處理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.btnSelect = new DevComponents.DotNetBar.ButtonX();
-            this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.helpCount = new DevComponents.DotNetBar.LabelX();
-            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.groupPanel2.SuspendLayout();
@@ -65,7 +66,7 @@
             this.btnExit.AutoSize = true;
             this.btnExit.BackColor = System.Drawing.Color.Transparent;
             this.btnExit.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnExit.Location = new System.Drawing.Point(1009, 603);
+            this.btnExit.Location = new System.Drawing.Point(1009, 605);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 25);
             this.btnExit.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -106,86 +107,21 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
-            this.dataGridViewX1.Location = new System.Drawing.Point(18, 127);
+            this.dataGridViewX1.Location = new System.Drawing.Point(18, 117);
             this.dataGridViewX1.Name = "dataGridViewX1";
             this.dataGridViewX1.RowHeadersVisible = false;
             this.dataGridViewX1.RowTemplate.Height = 24;
             this.dataGridViewX1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewX1.Size = new System.Drawing.Size(1066, 462);
+            this.dataGridViewX1.Size = new System.Drawing.Size(1066, 472);
             this.dataGridViewX1.TabIndex = 0;
-            // 
-            // colClassName
-            // 
-            this.colClassName.HeaderText = "班級";
-            this.colClassName.Name = "colClassName";
-            this.colClassName.Width = 75;
-            // 
-            // colSentNo
-            // 
-            this.colSentNo.HeaderText = "座號";
-            this.colSentNo.Name = "colSentNo";
-            this.colSentNo.Width = 75;
-            // 
-            // colStudentNumber
-            // 
-            this.colStudentNumber.HeaderText = "學號";
-            this.colStudentNumber.Name = "colStudentNumber";
-            this.colStudentNumber.Width = 75;
-            // 
-            // colStudentName
-            // 
-            this.colStudentName.HeaderText = "姓名";
-            this.colStudentName.Name = "colStudentName";
-            this.colStudentName.Width = 75;
-            // 
-            // colStudentAccount
-            // 
-            this.colStudentAccount.HeaderText = "學生帳號";
-            this.colStudentAccount.Name = "colStudentAccount";
-            this.colStudentAccount.Width = 200;
-            // 
-            // colStudentCode
-            // 
-            this.colStudentCode.HeaderText = "學生代碼";
-            this.colStudentCode.Name = "colStudentCode";
-            // 
-            // colParentCode
-            // 
-            this.colParentCode.HeaderText = "家長代碼";
-            this.colParentCode.Name = "colParentCode";
-            // 
-            // colParentEmail
-            // 
-            this.colParentEmail.HeaderText = "家長帳號";
-            this.colParentEmail.Name = "colParentEmail";
-            this.colParentEmail.Width = 250;
-            // 
-            // colRelationship
-            // 
-            this.colRelationship.HeaderText = "關係";
-            this.colRelationship.Name = "colRelationship";
-            // 
-            // colCustodianName
-            // 
-            this.colCustodianName.HeaderText = "監護人姓名";
-            this.colCustodianName.Name = "colCustodianName";
-            // 
-            // colFatherName
-            // 
-            this.colFatherName.HeaderText = "父親姓名";
-            this.colFatherName.Name = "colFatherName";
-            // 
-            // colMotherName
-            // 
-            this.colMotherName.HeaderText = "母親姓名";
-            this.colMotherName.Name = "colMotherName";
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.加入學生待處理ToolStripMenuItem});
+            this.加入學生待處理ToolStripMenuItem,
+            this.刪除家長帳號ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(159, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(159, 48);
             // 
             // 加入學生待處理ToolStripMenuItem
             // 
@@ -193,6 +129,13 @@
             this.加入學生待處理ToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.加入學生待處理ToolStripMenuItem.Text = "加入學生待處理";
             this.加入學生待處理ToolStripMenuItem.Click += new System.EventHandler(this.加入學生待處理ToolStripMenuItem_Click);
+            // 
+            // 刪除家長帳號ToolStripMenuItem
+            // 
+            this.刪除家長帳號ToolStripMenuItem.Name = "刪除家長帳號ToolStripMenuItem";
+            this.刪除家長帳號ToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.刪除家長帳號ToolStripMenuItem.Text = "刪除家長帳號";
+            this.刪除家長帳號ToolStripMenuItem.Click += new System.EventHandler(this.刪除家長帳號ToolStripMenuItem_Click);
             // 
             // labelX1
             // 
@@ -246,7 +189,7 @@
             this.groupPanel2.Controls.Add(this.labelX1);
             this.groupPanel2.Location = new System.Drawing.Point(18, 12);
             this.groupPanel2.Name = "groupPanel2";
-            this.groupPanel2.Size = new System.Drawing.Size(508, 103);
+            this.groupPanel2.Size = new System.Drawing.Size(1066, 89);
             // 
             // 
             // 
@@ -280,6 +223,21 @@
             this.groupPanel2.TabIndex = 4;
             this.groupPanel2.Text = "條件";
             // 
+            // labelX2
+            // 
+            this.labelX2.AutoSize = true;
+            // 
+            // 
+            // 
+            this.labelX2.BackgroundStyle.Class = "";
+            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.labelX2.Location = new System.Drawing.Point(504, 21);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(211, 21);
+            this.labelX2.TabIndex = 3;
+            this.labelX2.Text = "說明：未輸入條件 = 查詢所有帳號";
+            // 
             // helpCount
             // 
             this.helpCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -291,7 +249,7 @@
             this.helpCount.BackgroundStyle.Class = "";
             this.helpCount.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.helpCount.ForeColor = System.Drawing.Color.Red;
-            this.helpCount.Location = new System.Drawing.Point(110, 605);
+            this.helpCount.Location = new System.Drawing.Point(110, 607);
             this.helpCount.Name = "helpCount";
             this.helpCount.Size = new System.Drawing.Size(127, 21);
             this.helpCount.TabIndex = 2;
@@ -304,7 +262,7 @@
             this.buttonX1.AutoSize = true;
             this.buttonX1.BackColor = System.Drawing.Color.Transparent;
             this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Location = new System.Drawing.Point(18, 603);
+            this.buttonX1.Location = new System.Drawing.Point(18, 605);
             this.buttonX1.Name = "buttonX1";
             this.buttonX1.Size = new System.Drawing.Size(75, 25);
             this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -312,20 +270,71 @@
             this.buttonX1.Text = " 匯出";
             this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
             // 
-            // labelX2
+            // colClassName
             // 
-            this.labelX2.AutoSize = true;
+            this.colClassName.HeaderText = "班級";
+            this.colClassName.Name = "colClassName";
+            this.colClassName.Width = 75;
             // 
+            // colSentNo
             // 
+            this.colSentNo.HeaderText = "座號";
+            this.colSentNo.Name = "colSentNo";
+            this.colSentNo.Width = 75;
             // 
-            this.labelX2.BackgroundStyle.Class = "";
-            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.labelX2.Location = new System.Drawing.Point(79, 50);
-            this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(211, 21);
-            this.labelX2.TabIndex = 3;
-            this.labelX2.Text = "說明：未輸入條件 = 查詢所有帳號";
+            // colStudentNumber
+            // 
+            this.colStudentNumber.HeaderText = "學號";
+            this.colStudentNumber.Name = "colStudentNumber";
+            this.colStudentNumber.Width = 75;
+            // 
+            // colStudentName
+            // 
+            this.colStudentName.HeaderText = "姓名";
+            this.colStudentName.Name = "colStudentName";
+            this.colStudentName.Width = 75;
+            // 
+            // colStudentAccount
+            // 
+            this.colStudentAccount.HeaderText = "學生帳號";
+            this.colStudentAccount.Name = "colStudentAccount";
+            this.colStudentAccount.Width = 200;
+            // 
+            // colStudentCode
+            // 
+            this.colStudentCode.HeaderText = "學生代碼";
+            this.colStudentCode.Name = "colStudentCode";
+            // 
+            // colParentCode
+            // 
+            this.colParentCode.HeaderText = "家長代碼";
+            this.colParentCode.Name = "colParentCode";
+            // 
+            // colParentEmail
+            // 
+            this.colParentEmail.HeaderText = "家長帳號";
+            this.colParentEmail.Name = "colParentEmail";
+            this.colParentEmail.Width = 250;
+            // 
+            // colRelationship
+            // 
+            this.colRelationship.HeaderText = "稱謂";
+            this.colRelationship.Name = "colRelationship";
+            // 
+            // colCustodianName
+            // 
+            this.colCustodianName.HeaderText = "監護人姓名";
+            this.colCustodianName.Name = "colCustodianName";
+            // 
+            // colFatherName
+            // 
+            this.colFatherName.HeaderText = "父親姓名";
+            this.colFatherName.Name = "colFatherName";
+            // 
+            // colMotherName
+            // 
+            this.colMotherName.HeaderText = "母親姓名";
+            this.colMotherName.Name = "colMotherName";
             // 
             // ParentSeachForm
             // 
@@ -360,6 +369,11 @@
         private DevComponents.DotNetBar.ButtonX btnSelect;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel2;
         private DevComponents.DotNetBar.LabelX helpCount;
+        private DevComponents.DotNetBar.ButtonX buttonX1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 加入學生待處理ToolStripMenuItem;
+        private DevComponents.DotNetBar.LabelX labelX2;
+        private System.Windows.Forms.ToolStripMenuItem 刪除家長帳號ToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn colClassName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSentNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStudentNumber;
@@ -372,9 +386,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colCustodianName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFatherName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMotherName;
-        private DevComponents.DotNetBar.ButtonX buttonX1;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem 加入學生待處理ToolStripMenuItem;
-        private DevComponents.DotNetBar.LabelX labelX2;
     }
 }

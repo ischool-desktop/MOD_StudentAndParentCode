@@ -27,7 +27,7 @@ namespace K12Code.Management.Module
             parent_code = "" + row["parent_code"];
 
             custodian_name = "" + row["custodian_name"];
-
+            parent_id = "" + row["parent_id"];
         }
 
         public void Save()
@@ -43,7 +43,7 @@ namespace K12Code.Management.Module
 
 
 
-
+        public string parent_id { get; set; }
         public string student_id { get; set; }
         public string student_name { get; set; }
         public string student_number { get; set; }

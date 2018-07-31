@@ -226,14 +226,23 @@ namespace K12Code.Management.Module
             if (data.DeleteParentList.Count > 0)
             {
                 List<string> list = new List<string>();
+
+                StringBuilder sb_log = new StringBuilder();
+                sb_log.AppendLine("已刪除學生「{0}」家長登入帳號：");
                 foreach (StudentAndParent sap in data.DeleteParentList)
                 {
                     list.Add(sap.id);
+
+                    sb_log.AppendLine(String.Format("帳號「{1}」稱謂「{2}」", sap.Account, sap.Relationship));
+
                 }
                 string q3 = "delete from student_parent where ref_student_id in ('{0}') and id in ('{1}');";
                 string cmddeleteRelationship = string.Format(q3, this.PrimaryKey, string.Join("','", list));
 
                 StatTool.ClearRelationship(cmddeleteRelationship);
+
+                FISCA.LogAgent.ApplicationLog.Log("親屬關係", "刪除", sb_log.ToString());
+
             }
 
             #endregion
@@ -306,17 +315,14 @@ namespace K12Code.Management.Module
             }
         }
 
-        public void ClearRelationship()
+        private void 新增家長ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-
-            //DeleteIDList
-
-        }
-
-        private void 新增關係ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MsgBox.Show("功能尚未完成!!");
+            NewParentForm npForm = new NewParentForm(data);
+            DialogResult dr = npForm.ShowDialog();
+            if (dr == DialogResult.Yes)
+            {
+                Changed();
+            }
         }
     }
 }

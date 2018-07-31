@@ -12,6 +12,6 @@ namespace K12Code.Management.Module
     {
         static public AccessHelper _A = new AccessHelper();
         static public QueryHelper _Q = new QueryHelper();
-
+        static public K12.Data.UpdateHelper _U = new K12.Data.UpdateHelper();
     }
 }

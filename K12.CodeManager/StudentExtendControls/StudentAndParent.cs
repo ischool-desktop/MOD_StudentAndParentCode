@@ -6,7 +6,7 @@ using System.Data;
 
 namespace K12Code.Management.Module
 {
-    class StudentAndParent
+    public class StudentAndParent
     {
         /// <summary>
         /// 編號

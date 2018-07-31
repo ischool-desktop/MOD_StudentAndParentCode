@@ -6,7 +6,7 @@ using System.Data;
 
 namespace K12Code.Management.Module
 {
-    class CampusLiteOBJ
+    public class CampusLiteOBJ
     {
         /// <summary>
         /// 登入帳號

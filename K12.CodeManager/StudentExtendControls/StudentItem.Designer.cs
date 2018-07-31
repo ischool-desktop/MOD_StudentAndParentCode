@@ -39,6 +39,7 @@
             this.btnGenerateStudentCode = new DevComponents.DotNetBar.ButtonX();
             this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.新增家長ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.刪除關係ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.btnGenerateParentCode = new DevComponents.DotNetBar.ButtonX();
@@ -59,7 +60,7 @@
             // 
             this.txtStudentCode.BackgroundStyle.Class = "";
             this.txtStudentCode.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtStudentCode.Location = new System.Drawing.Point(11, 128);
+            this.txtStudentCode.Location = new System.Drawing.Point(11, 158);
             this.txtStudentCode.Name = "txtStudentCode";
             this.txtStudentCode.Size = new System.Drawing.Size(60, 21);
             this.txtStudentCode.TabIndex = 2;
@@ -73,7 +74,7 @@
             // 
             this.txtParentCode.BackgroundStyle.Class = "";
             this.txtParentCode.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtParentCode.Location = new System.Drawing.Point(278, 128);
+            this.txtParentCode.Location = new System.Drawing.Point(282, 158);
             this.txtParentCode.Name = "txtParentCode";
             this.txtParentCode.Size = new System.Drawing.Size(60, 21);
             this.txtParentCode.TabIndex = 3;
@@ -86,7 +87,7 @@
             // 
             this.tbStudentCode.Border.Class = "TextBoxBorder";
             this.tbStudentCode.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tbStudentCode.Location = new System.Drawing.Point(78, 126);
+            this.tbStudentCode.Location = new System.Drawing.Point(78, 156);
             this.tbStudentCode.Name = "tbStudentCode";
             this.tbStudentCode.Size = new System.Drawing.Size(136, 25);
             this.tbStudentCode.TabIndex = 4;
@@ -98,7 +99,7 @@
             // 
             this.tbParentCode.Border.Class = "TextBoxBorder";
             this.tbParentCode.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.tbParentCode.Location = new System.Drawing.Point(345, 126);
+            this.tbParentCode.Location = new System.Drawing.Point(348, 156);
             this.tbParentCode.Name = "tbParentCode";
             this.tbParentCode.Size = new System.Drawing.Size(136, 25);
             this.tbParentCode.TabIndex = 5;
@@ -107,7 +108,7 @@
             // 
             this.btnGenerateStudentCode.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnGenerateStudentCode.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnGenerateStudentCode.Location = new System.Drawing.Point(221, 127);
+            this.btnGenerateStudentCode.Location = new System.Drawing.Point(221, 157);
             this.btnGenerateStudentCode.Name = "btnGenerateStudentCode";
             this.btnGenerateStudentCode.Size = new System.Drawing.Size(50, 23);
             this.btnGenerateStudentCode.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -147,15 +148,23 @@
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.新增家長ToolStripMenuItem,
             this.刪除關係ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(123, 48);
+            // 
+            // 新增家長ToolStripMenuItem
+            // 
+            this.新增家長ToolStripMenuItem.Name = "新增家長ToolStripMenuItem";
+            this.新增家長ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.新增家長ToolStripMenuItem.Text = "新增家長";
+            this.新增家長ToolStripMenuItem.Click += new System.EventHandler(this.新增家長ToolStripMenuItem_Click);
             // 
             // 刪除關係ToolStripMenuItem
             // 
             this.刪除關係ToolStripMenuItem.Name = "刪除關係ToolStripMenuItem";
-            this.刪除關係ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.刪除關係ToolStripMenuItem.Text = "刪除關係";
+            this.刪除關係ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.刪除關係ToolStripMenuItem.Text = "刪除家長";
             this.刪除關係ToolStripMenuItem.Click += new System.EventHandler(this.刪除關係ToolStripMenuItem_Click);
             // 
             // labelX4
@@ -166,17 +175,17 @@
             // 
             this.labelX4.BackgroundStyle.Class = "";
             this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX4.Location = new System.Drawing.Point(11, 15);
+            this.labelX4.Location = new System.Drawing.Point(11, 19);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(60, 21);
             this.labelX4.TabIndex = 11;
-            this.labelX4.Text = "親屬資料\r\n";
+            this.labelX4.Text = "親屬關係";
             // 
             // btnGenerateParentCode
             // 
             this.btnGenerateParentCode.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnGenerateParentCode.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnGenerateParentCode.Location = new System.Drawing.Point(488, 127);
+            this.btnGenerateParentCode.Location = new System.Drawing.Point(490, 157);
             this.btnGenerateParentCode.Name = "btnGenerateParentCode";
             this.btnGenerateParentCode.Size = new System.Drawing.Size(50, 23);
             this.btnGenerateParentCode.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -192,11 +201,12 @@
             // 
             this.labelX1.BackgroundStyle.Class = "";
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Location = new System.Drawing.Point(11, 157);
+            this.labelX1.ForeColor = System.Drawing.Color.DimGray;
+            this.labelX1.Location = new System.Drawing.Point(11, 124);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(541, 21);
+            this.labelX1.Size = new System.Drawing.Size(516, 21);
             this.labelX1.TabIndex = 12;
-            this.labelX1.Text = "說明：　(a)家長若已認證代碼,將會自動帶入姓名與性別　(b)親屬資料畫面,右鍵可刪除關係";
+            this.labelX1.Text = "*.右鍵可新增或刪除家長登入帳號，批次查詢功能可至系統->行動應用->家長帳號查詢";
             // 
             // Column1
             // 
@@ -204,7 +214,7 @@
             this.Column1.HeaderText = "登入帳號";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
-            this.Column1.Width = 180;
+            this.Column1.Width = 250;
             // 
             // Column3
             // 
@@ -212,7 +222,7 @@
             this.Column3.HeaderText = "稱謂";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
-            this.Column3.Width = 80;
+            this.Column3.Width = 200;
             // 
             // Column2
             // 
@@ -222,6 +232,7 @@
             this.Column2.HeaderText = "姓名";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
+            this.Column2.Visible = false;
             this.Column2.Width = 90;
             // 
             // Column4
@@ -232,6 +243,7 @@
             this.Column4.HeaderText = "性別";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
+            this.Column4.Visible = false;
             this.Column4.Width = 80;
             // 
             // StudentItem
@@ -248,7 +260,7 @@
             this.Controls.Add(this.labelX1);
             this.Controls.Add(this.labelX4);
             this.Name = "StudentItem";
-            this.Size = new System.Drawing.Size(550, 185);
+            this.Size = new System.Drawing.Size(550, 205);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -269,6 +281,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 刪除關係ToolStripMenuItem;
         private DevComponents.DotNetBar.LabelX labelX1;
+        private System.Windows.Forms.ToolStripMenuItem 新增家長ToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;

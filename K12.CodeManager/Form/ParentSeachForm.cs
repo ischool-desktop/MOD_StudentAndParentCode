@@ -62,7 +62,8 @@ namespace K12Code.Management.Module
             sb_sql.Append("select student.id as student_id,student.name as student_name,student.student_number,");
             sb_sql.Append("student.seat_no,class.class_name,class.grade_year,parent.relationship,");
             sb_sql.Append("parent.account as parent_account,student.student_code,student.parent_code,");
-            sb_sql.Append("sa_login_name,student.father_name,student.mother_name,student.custodian_name  ");
+            sb_sql.Append("sa_login_name,student.father_name,student.mother_name,student.custodian_name,");
+            sb_sql.Append("parent.id as parent_id ");
             sb_sql.Append("from student ");
             sb_sql.Append("left join student_parent parent on student.id=parent.ref_student_id ");
             sb_sql.Append("left join class on class.id=student.ref_class_id ");
@@ -127,7 +128,7 @@ namespace K12Code.Management.Module
                             row.Cells[colFatherName.Index].Value = each.father_name;
                             row.Cells[colMotherName.Index].Value = each.mother_name;
                             row.Cells[colCustodianName.Index].Value = each.custodian_name;
-
+                            row.ReadOnly = true;
                             row.Tag = each;
                             dataGridViewX1.Rows.Add(row);
                         }
@@ -201,6 +202,50 @@ namespace K12Code.Management.Module
 
 
 
+        }
+
+        private void 刪除家長帳號ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewX1.SelectedRows.Count > 0)
+            {
+                DialogResult dr = MsgBox.Show(string.Format("確定要刪除所選家長身份?\n共 {0} 筆資料", dataGridViewX1.SelectedRows.Count), MessageBoxButtons.YesNo, MessageBoxDefaultButton.Button2);
+                if (dr == DialogResult.Yes)
+                {
+                    StringBuilder sb_log = new StringBuilder();
+                    sb_log.AppendLine("刪除家長登入帳號：");
+
+                    List<string> parent_idList = new List<string>();
+                    foreach (DataGridViewRow row in dataGridViewX1.SelectedRows)
+                    {
+                        Stud each = (Stud)row.Tag;
+                        if (!parent_idList.Contains(each.parent_id))
+                        {
+                            parent_idList.Add(string.Format("id={0}", each.parent_id));
+                        }
+
+                        sb_log.Append(string.Format("學生「{0}」", each.student_name));
+                        sb_log.AppendLine(string.Format("家長帳號「{0}」", each.parent_account));
+                    }
+                    string tt = string.Join(" or ", parent_idList);
+
+                    tool._U.Execute(string.Format("delete from student_parent where {0}", tt));
+
+                    FISCA.LogAgent.ApplicationLog.Log("親屬關係", "刪除", sb_log.ToString());
+
+                    RunWorker();
+
+                    MsgBox.Show("刪除家長成功!!");
+
+                }
+                else
+                {
+                    MsgBox.Show("已取消");
+                }
+            }
+            else
+            {
+                MsgBox.Show("請選擇資料");
+            }
         }
     }
 }
