@@ -136,4 +136,7 @@
   <data name="班級學生家長代碼表_範例" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\班級學生家長代碼表_範例.doc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="format" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\format.xsl;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

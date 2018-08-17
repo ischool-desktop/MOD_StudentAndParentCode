@@ -38,16 +38,16 @@
             this.tbParentCode = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.btnGenerateStudentCode = new DevComponents.DotNetBar.ButtonX();
             this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.新增家長ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.刪除關係ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.btnGenerateParentCode = new DevComponents.DotNetBar.ButtonX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -145,25 +145,64 @@
             this.dataGridViewX1.Size = new System.Drawing.Size(463, 101);
             this.dataGridViewX1.TabIndex = 10;
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Account";
+            this.Column1.HeaderText = "登入帳號";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 250;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "Relationship";
+            this.Column3.HeaderText = "稱謂";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 200;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Name";
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column2.HeaderText = "姓名";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Visible = false;
+            this.Column2.Width = 90;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "Gender";
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightCyan;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column4.HeaderText = "性別";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Visible = false;
+            this.Column4.Width = 80;
+            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.新增家長ToolStripMenuItem,
             this.刪除關係ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(123, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 70);
             // 
             // 新增家長ToolStripMenuItem
             // 
+            this.新增家長ToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.新增家長ToolStripMenuItem.Name = "新增家長ToolStripMenuItem";
-            this.新增家長ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.新增家長ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.新增家長ToolStripMenuItem.Text = "新增家長";
             this.新增家長ToolStripMenuItem.Click += new System.EventHandler(this.新增家長ToolStripMenuItem_Click);
             // 
             // 刪除關係ToolStripMenuItem
             // 
             this.刪除關係ToolStripMenuItem.Name = "刪除關係ToolStripMenuItem";
-            this.刪除關係ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.刪除關係ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.刪除關係ToolStripMenuItem.Text = "刪除家長";
             this.刪除關係ToolStripMenuItem.Click += new System.EventHandler(this.刪除關係ToolStripMenuItem_Click);
             // 
@@ -207,44 +246,6 @@
             this.labelX1.Size = new System.Drawing.Size(516, 21);
             this.labelX1.TabIndex = 12;
             this.labelX1.Text = "*.右鍵可新增或刪除家長登入帳號，批次查詢功能可至系統->行動應用->家長帳號查詢";
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "Account";
-            this.Column1.HeaderText = "登入帳號";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 250;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "Relationship";
-            this.Column3.HeaderText = "稱謂";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 200;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "Name";
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Column2.HeaderText = "姓名";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Visible = false;
-            this.Column2.Width = 90;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "Gender";
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightCyan;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column4.HeaderText = "性別";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Visible = false;
-            this.Column4.Width = 80;
             // 
             // StudentItem
             // 

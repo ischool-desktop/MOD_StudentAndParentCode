@@ -49,12 +49,13 @@ namespace K12Code.Management.Module
 
             Dictionary<string, List<string>> dic = new Dictionary<string, List<string>>();
             //取得比對序
-
-            DataTable dt = _queryHelper.Select("select id,student_number from student");
+            
+            //畢業離校與刪除不予處理
+            DataTable dt = _queryHelper.Select("select id,student_number,status from student  where status not in ('256','16')");
             foreach (DataRow row in dt.Rows)
             {
-                string StudentID = "" + row[0];
-                string Student_Number = "" + row[1];
+                string StudentID = "" + row["id"];
+                string Student_Number = "" + row["student_number"];
 
                 if (string.IsNullOrEmpty(Student_Number))
                     continue;

@@ -145,7 +145,7 @@
             // 
             // comboItem7
             // 
-            this.comboItem7.Text = "其它";
+            this.comboItem7.Text = "其他";
             // 
             // labelX2
             // 

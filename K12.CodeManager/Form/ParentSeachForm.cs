@@ -208,7 +208,7 @@ namespace K12Code.Management.Module
         {
             if (dataGridViewX1.SelectedRows.Count > 0)
             {
-                DialogResult dr = MsgBox.Show(string.Format("確定要刪除所選家長身份?\n共 {0} 筆資料", dataGridViewX1.SelectedRows.Count), MessageBoxButtons.YesNo, MessageBoxDefaultButton.Button2);
+                DialogResult dr = MsgBox.Show(string.Format("確定要刪除所選家長帳號?\n共 {0} 筆資料", dataGridViewX1.SelectedRows.Count), MessageBoxButtons.YesNo, MessageBoxDefaultButton.Button2);
                 if (dr == DialogResult.Yes)
                 {
                     StringBuilder sb_log = new StringBuilder();

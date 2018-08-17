@@ -228,12 +228,12 @@ namespace K12Code.Management.Module
                 List<string> list = new List<string>();
 
                 StringBuilder sb_log = new StringBuilder();
-                sb_log.AppendLine("已刪除學生「{0}」家長登入帳號：");
+                sb_log.AppendLine(string.Format("刪除學生「{0}」家長登入帳號：", data.sr.Name));
                 foreach (StudentAndParent sap in data.DeleteParentList)
                 {
                     list.Add(sap.id);
 
-                    sb_log.AppendLine(String.Format("帳號「{1}」稱謂「{2}」", sap.Account, sap.Relationship));
+                    sb_log.AppendLine(String.Format("帳號「{0}」稱謂「{1}」", sap.Account, sap.Relationship));
 
                 }
                 string q3 = "delete from student_parent where ref_student_id in ('{0}') and id in ('{1}');";

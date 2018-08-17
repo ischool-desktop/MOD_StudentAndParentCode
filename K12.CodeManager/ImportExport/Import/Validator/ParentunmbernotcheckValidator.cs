@@ -24,13 +24,13 @@ namespace K12Code.Management.Module
             FISCA.Data.QueryHelper _queryHelper = new FISCA.Data.QueryHelper();
             List<string> list = new List<string>();
 
-            DataTable dt = StatTool.Q.Select("select parent_code from student where student_code is not null");
+            DataTable dt = StatTool.Q.Select("select parent_code from student where parent_code is not null");
             foreach (DataRow row in dt.Rows)
             {
-                string student_code = "" + row["parent_code"];
-                if (!list.Contains(student_code))
+                string parent_code = "" + row["parent_code"];
+                if (!list.Contains(parent_code))
                 {
-                    list.Add(student_code);
+                    list.Add(parent_code);
                 }
 
             }

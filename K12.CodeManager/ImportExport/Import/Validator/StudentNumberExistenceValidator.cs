@@ -26,7 +26,7 @@ namespace K12Code.Management.Module
             Dictionary<string, List<string>> dic = new Dictionary<string, List<string>>();
             //取得比對序
 
-            DataTable dt = _queryHelper.Select("select id,student_number from student");
+            DataTable dt = _queryHelper.Select("select id,student_number from student where status not in ('256','16')");
             foreach (DataRow row in dt.Rows)
             {
                 string StudentID = "" + row[0];

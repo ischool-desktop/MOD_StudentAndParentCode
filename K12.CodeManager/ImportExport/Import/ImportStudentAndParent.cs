@@ -44,7 +44,7 @@ namespace K12Code.Management.Module
             Dictionary<string, string> dic = new Dictionary<string, string>();
             //取得比對序
 
-            DataTable dt = StatTool.Q.Select("select student_number,name from student");
+            DataTable dt = StatTool.Q.Select("select student_number,name from student where status not in ('256','16')");
             foreach (DataRow row in dt.Rows)
             {
                 string student_number = "" + row[0];
@@ -67,7 +67,7 @@ namespace K12Code.Management.Module
             Dictionary<string, string> dic = new Dictionary<string, string>();
             //取得比對序
 
-            DataTable dt = StatTool.Q.Select("select id,student_number,name from student");
+            DataTable dt = StatTool.Q.Select("select id,student_number,name from student where status not in ('256','16')");
             foreach (DataRow row in dt.Rows)
             {
                 string StudentID = "" + row[0];
