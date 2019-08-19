@@ -17,8 +17,8 @@
     <Field Required="True" Name="學號" Description="此為學生必要鍵值(學號不可重覆)">
       <Validate AutoCorrect="False" Description="「學號」不允許空白。" ErrorType="Error" Validator="不可空白" When=""/>
       <Validate AutoCorrect="False" Description="「學號」長度必須小於12個文字。" ErrorType="Error" Validator="文字12" When=""/>
-      <Validate AutoCorrect="False" Description="「學號」不存在於系統中。" ErrorType="Error" Validator="學號是否存在系統" When=""/>
-      <Validate AutoCorrect="False" Description="「學號」於系統內有多名學生。" ErrorType="Error" Validator="學號是否重覆" When=""/>
+      <Validate AutoCorrect="False" Description="「學號」不存在或是「畢業離校」「刪除」。" ErrorType="Error" Validator="學號是否存在系統CODE" When=""/>
+      <Validate AutoCorrect="False" Description="「學號」於系統內有多名學生。" ErrorType="Error" Validator="學號是否重覆CODE" When=""/>
       <Validate AutoCorrect="False" Description="「學號」建議使用英文數字組合(不包含空白)。" ErrorType="Warning" Validator="多個英數字元" When=""/>
     </Field>
     
@@ -42,8 +42,8 @@
     
   </FieldList>
   <ValidatorList>
-    <FieldValidator Name="學號是否存在系統" Type="STUDENTNUMBEREXISTENCE"/>
-    <FieldValidator Name="學號是否重覆" Type="STUDENTNUMBERREPEAT"/>
+    <FieldValidator Name="學號是否存在系統CODE" Type="STUDENTNUMBEREXISTENCECODE"/>
+    <FieldValidator Name="學號是否重覆CODE" Type="STUDENTNUMBERREPEATCODE"/>
     <FieldValidator Name="學生代碼不可重覆" Type="STUDENTNUMBERNOTCHECK"/>
     <FieldValidator Name="家長代碼不可重覆" Type="PARENTNUMBERNOTCHECK"/>
     <FieldValidator Name="建議是英文數字組合" Type="NUMBERISSIX1"/>

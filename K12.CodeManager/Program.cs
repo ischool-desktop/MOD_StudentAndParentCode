@@ -17,7 +17,7 @@ namespace K12Code.Management.Module
         [MainMethod()]
         public static void Main()
         {
-            Campus.DocumentValidator.FactoryProvider.FieldFactory.Add(new FieldValidatorFactory());
+            Campus.DocumentValidator.FactoryProvider.FieldFactory.Add(new FieldValidatorFactoryCode());
 
             FeatureAce UserPermission = FISCA.Permission.UserAcl.Current[Permissions.帳號與親子關係];
             if (UserPermission.Editable)

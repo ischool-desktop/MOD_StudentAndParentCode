@@ -177,7 +177,7 @@
     <Compile Include="ImportExport\Import\ImportStudentAndParent.cs" />
     <Compile Include="ImportExport\Import\Validator\DataRepeatCheckValidator1.cs" />
     <Compile Include="ImportExport\Import\Validator\DataRepeatCheckValidator2.cs" />
-    <Compile Include="ImportExport\Import\Validator\FieldValidatorFactory.cs" />
+    <Compile Include="ImportExport\Import\FieldValidatorFactory.cs" />
     <Compile Include="ImportExport\Import\Validator\NumberissixValidator.cs" />
     <Compile Include="ImportExport\Import\Validator\NumberissixValidator_2.cs" />
     <Compile Include="ImportExport\Import\Validator\ParentunmbernotcheckValidator.cs" />

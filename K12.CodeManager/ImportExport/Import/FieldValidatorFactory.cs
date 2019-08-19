@@ -7,7 +7,7 @@ using System.Data;
 
 namespace K12Code.Management.Module
 {
-    class FieldValidatorFactory : IFieldValidatorFactory
+    class FieldValidatorFactoryCode : IFieldValidatorFactory
     {
         #region IFieldValidatorFactory 成員
 
@@ -16,9 +16,10 @@ namespace K12Code.Management.Module
 
             switch (typeName.ToUpper())
             {
-                case "STUDENTNUMBEREXISTENCE": //學號必須尋在系統
+                //學號必須存在系統(2019/8/19 - Dylan名稱調整,避免無法迴避256/16)
+                case "STUDENTNUMBEREXISTENCECODE":
                     return new StudentNumberExistenceValidator();
-                case "STUDENTNUMBERREPEAT": //學號不可重覆
+                case "STUDENTNUMBERREPEATCODE": //學號不可重覆
                     return new StudentNumberRepeatValidator();
                 case "STUDENTNUMBERNOTCHECK": //學生代碼不可重覆
                     return new StudentnumbernotcheckValidator();

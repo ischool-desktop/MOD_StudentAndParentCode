@@ -99,8 +99,26 @@ namespace K12Code.Management.Module
             foreach (IRowStream each in Rows)
             {
                 string Student_Number = each.GetValue("學號");
-                string RefStudentID = StudentNumberByID[Student_Number]; //學生ID
-                string Name = StudentNumberByName[Student_Number]; //學生姓名
+                string RefStudentID = "";
+                if (StudentNumberByID.ContainsKey(Student_Number))
+                {
+                    RefStudentID = StudentNumberByID[Student_Number]; //學生ID
+                }
+                else
+                {
+                    MsgBox.Show("學號不存在(或畢業離校刪除):" + Student_Number);
+                }
+
+                string Name = "";
+                if (StudentNumberByName.ContainsKey(Student_Number))
+                {
+                    Name = StudentNumberByName[Student_Number]; //學生姓名
+                }
+                else
+                {
+                    MsgBox.Show("學號不存在(或畢業離校刪除):" + Student_Number);
+                }
+
                 string Student_Code = "" + each.GetValue("學生代碼");
                 string Parent_Code = "" + each.GetValue("家長代碼");
 
