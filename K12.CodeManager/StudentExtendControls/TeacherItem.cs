@@ -10,6 +10,7 @@ using FISCA.Presentation.Controls;
 using FISCA.UDT;
 using K12.Data;
 using FISCA.LogAgent;
+using FISCA.Permission;
 
 namespace K12Code.Management.Module
 {
@@ -33,11 +34,16 @@ namespace K12Code.Management.Module
 
         string TeacherCode { get; set; }
 
+        internal static FeatureAce UserPermission;
+
         public TeacherItem()
         {
             InitializeComponent();
 
             Group = "教師代碼";
+
+            UserPermission = UserAcl.Current[FISCA.Permission.FeatureCodeAttribute.GetCode(GetType())];
+            this.Enabled = UserPermission.Editable;
         }
 
         private void TeacherItem_Load(object sender, EventArgs e)

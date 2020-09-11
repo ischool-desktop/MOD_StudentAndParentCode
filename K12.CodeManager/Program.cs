@@ -20,11 +20,11 @@ namespace K12Code.Management.Module
             Campus.DocumentValidator.FactoryProvider.FieldFactory.Add(new FieldValidatorFactoryCode());
 
             FeatureAce UserPermission = FISCA.Permission.UserAcl.Current[Permissions.帳號與親子關係];
-            if (UserPermission.Editable)
+            if (UserPermission.Editable || UserPermission.Viewable)
                 K12.Presentation.NLDPanels.Student.AddDetailBulider(new FISCA.Presentation.DetailBulider<StudentItem>());
 
             UserPermission = FISCA.Permission.UserAcl.Current[Permissions.教師代碼];
-            if (UserPermission.Editable)
+            if (UserPermission.Editable || UserPermission.Viewable)
                 K12.Presentation.NLDPanels.Teacher.AddDetailBulider(new FISCA.Presentation.DetailBulider<TeacherItem>());
 
             #region 學生代碼管理

@@ -10,6 +10,7 @@ using K12.Data;
 using FISCA.UDT;
 using FISCA;
 using Campus.Windows;
+using FISCA.Permission;
 
 namespace K12Code.Management.Module
 {
@@ -27,6 +28,8 @@ namespace K12Code.Management.Module
 
         private ChangeListener DataListener { get; set; }
 
+        internal static FeatureAce UserPermission;
+
         FromData data { get; set; }
 
         public StudentItem()
@@ -34,6 +37,9 @@ namespace K12Code.Management.Module
             InitializeComponent();
 
             Group = "代碼與親屬關係";
+
+            UserPermission = UserAcl.Current[FISCA.Permission.FeatureCodeAttribute.GetCode(GetType())];
+            this.Enabled = UserPermission.Editable;
 
             BGW.DoWork += new DoWorkEventHandler(BGW_DoWork);
             BGW.RunWorkerCompleted += new RunWorkerCompletedEventHandler(BGW_RunWorkerCompleted);
